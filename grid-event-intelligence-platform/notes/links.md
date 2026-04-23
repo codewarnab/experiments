@@ -1,0 +1,2 @@
+- Grid intelligence reading:
+  - http://127.0.0.1:5211/wiki/papers/ai-ml/ml-fundamentals/bias-variance-tradeoff-a-first-principles-deep-dive-grounded-in-time-series-and-anomaly-detection-for-grid-intelligence
