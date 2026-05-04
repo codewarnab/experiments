@@ -23,6 +23,7 @@ vocab_size = 50257
 
 import torch 
 from transformer_lens import HookedTransformer
+from transformer_lens.ActivationCache import ActivationCache
 #Load GPT2 first run downloads 500 mb cached afterwards 
 # #run embed = True tells transformerlens to also cache embedding layer outputs 
 model = HookedTransformer.from_pretrained("gpt2-small",center_unembed = True , center_writing_weights = True , fold_ln = True )
@@ -46,7 +47,7 @@ print(f" d_mlp : {model.cfg.d_mlp}")
 print(f" vocab_size : {model.cfg.d_vocab}")
 print()
 
-def run(prompt:str ):
+def run(prompt:str )-> tuple[torch.Tensor, torch.Tensor, ActivationCache]:
     """ 
     Run a forwards pass on "prompt" and return everything 
 
